@@ -1,0 +1,74 @@
+
+
+.parent {
+    margin:0px;
+    padding:0px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    
+}
+    
+.ovladaniPanelu { 
+    grid-area: 1 / 1 / 1 / 4; 
+    width: 100%; 
+    height: 50px; 
+}
+
+.middle-half {
+    grid-area: 2 / 2 / 4 / 3; 
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height:80vh;
+
+    overflow-x: scroll; 
+    overflow-y: scroll; 
+}
+
+.left-half  { 
+    grid-area: 2 / 1 / 4 / 2; 
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height:80vh;
+
+    overflow-x: scroll; 
+    overflow-y: scroll; 
+}   
+
+.right-half {
+    grid-area: 2 / 3 / 4 / 4; 
+    width: 90%;
+    overflow-x: scroll; 
+    overflow-y: scroll; 
+
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height:80vh;
+
+    overflow-x: scroll; 
+    overflow-y: scroll;
+
+}
+
+div:not(.parent){
+    margin:10px;
+    padding:10px;
+    background-color: rgb(204, 255, 255);
+}
+
+
+button {
+    float:left;
+    font-size: 16px;
+    display: block;
+    margin:10px;
+    
+}
+
+#myCanvas { background-color: rgba(158, 167, 184, 0.2); }
+
+
+
+

@@ -1,0 +1,109 @@
+body {
+    line-height: 15px; /* 4px +12px + 4px */
+    margin:5px
+}
+
+.frame {
+    position: relative;
+    padding: 10px;
+    width:400px;
+    border: 1px solid black;
+}
+
+
+
+#nadpisSekceButt{
+    top: 0;
+    text-align: center;
+    margin:10px;
+}
+
+#nadpisTabulkaButt{
+    top: 0;
+    text-align: center;
+    margin:10px;
+}
+
+#nadpisGrafikaButt{
+    top: 0;
+    text-align: center;
+    margin:10px;
+}
+
+.odsazeni0 {
+    position: relative;
+    left:10px;
+}
+
+.odsazeni1 {
+    position: relative;
+    left:20px;
+}
+
+.odsazeni15 {
+    position: relative;
+    left:20px;
+}
+
+#pocetPrutu {
+    position: relative;
+    left:30px;
+    width:50px;
+}
+
+.odsazeni18 {
+    position: relative;
+    left:20px;
+    width:50px;
+}
+
+.odsazeni2 {
+    position: relative;
+    left:20px;
+}
+
+.odsazeni3 {
+    position: relative;
+    left:40px;
+}
+
+.odsazeni4 {
+    position: relative;
+    left:60px;
+    width:50px;
+}
+
+#prumer {
+    position: relative;
+    left:60px;
+    width:50px;
+}
+        
+br {
+    font: 5px;
+}
+
+#zaokrouhlit{
+    position: relative;
+    width: 20px;
+    left: 30px;
+}
+
+.meritko{
+    position: relative;
+    width: 50px;
+    left: 0px;
+}
+
+.meritkoKce{
+    position: relative;
+    width: 30px;
+    left: 10px;
+}
+
+.meritkoLabel{
+    position: relative;
+    width: 30px;
+    left: 0px;
+    padding-left: 40px;
+}

@@ -1,0 +1,20 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid black;
+    text-align: center;
+    padding: 4px;
+  }
+
+  table input {
+    width: 50px;
+    text-align: center;
+  }
+
+  table th{
+    background-color: lightgrey;
+  }

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+</style>
+</head>
+<body>
+
+    <link rel="stylesheet" href="grid2Css.css">
+    <link rel="stylesheet" href="cssTabulka.css">
+    <link rel="stylesheet" href="cssZadani.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script language="JavaScript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/3.2.1/math.js"></script>
+    <script src="vykreslujGrafy.js"></script>
+    <script src="scriptTabulka.js"></script>
+    <script src="scriptZadani.js"></script>
+    <script src="FEM.js"></script>
+
+    <script src="dataDoOOFEMu.js"></script>
+
+    
+
+    <div class="grid-container">
+
+        <div class="item1">
+
+            <div class="frameButt1">
+            <h4 id="nadpisSekceButt">Zobrazuje/skrývá jednotlivé sekce</h4>
+                <button id="skryjZadaniButt">Skryj Zadání</button>
+                <button id="skryjTabulkuButt">Skryj Tabulku</button>
+                <button id="skryjVysledkyButt">Skryj Grafiku</button>
+            </div>
+            
+            <div class="frameButt2">
+                <h4 id="nadpisTabulkaButt">Doplňuje data do tabulky</h4>
+                <button id="spoctiTabulkuButt">Před výpočtem FEM</button>
+                <button id="spoctiVysledkyButt">Výpočet FEM</button>
+            </div>
+
+            <div class="frameButt3">
+                <h4 id="nadpisGrafikaButt">Grafika</h4>
+                <button id="zobrazGrafikuButt">Zobraz grafiku</button>
+                <button id="submitButtPok">pokus</button>
+            
+               
+            
+            </div>
+            
+        </div>
+
+        <div class="item2">
+
+            <div class="frame">
+
+                <!-- ZKLADNI UDAJE -->
+                <h3>Základní údaje o konstrukci</h3>
+
+                <label class="odsazeni1">Celková délka prutu:</label>
+                <input type="text" id="celkovaDelkaPrutu" class="odsazeni2"><br><br>
+
+                <label class="odsazeni1">Počet intervalů:</label>
+                <input type="text" id="pocetIntervalu" class="odsazeni2"><br><br>
+
+                <input type="radio" id="konstatntiPoCeleDelce" name="prurezPoDelce" value="konstantni" checked class="odsazeni0">
+                <label class="odsazeni1">Konstantní průřez po celé délce</label><br>
+                <input type="radio" id="konickyTvar" name="prurezPoDelce" value="konicky" class="odsazeni0">
+                <label class="odsazeni1">Kónický průřez</label><br><br><br>
+
+                <input type="checkbox" name="checkVlastniTiha" id="checkVlastniTiha" class="odsazeni0">
+                <label class="odsazeni1">Uvažovat vlastní tíhu</label>
+                <br><br><label id="labelVlastniTiha" class="odsazeni1">Vlastní tíha na metr:</label>
+                <input type="text" name="inputVlastniTiha" id="inputVlastniTiha" class="odsazeni3">
+
+                <br><br><label class="odsazeni1">Zaokrouhlovat výpočty na počet des. míst:</label>
+                <input type="text" id="zaokrouhlit" value="3"><br><br>
+                
+            </div>
+
+            <div class="frame">
+            
+                <!-- PODPORA -->
+                <h3>Podepření</h3>
+
+                <!-- PODPORA NAHOŘE -->
+                <p>Podpora nahoře</p>
+                <input type="radio" id="podporaNahore_vetknuti" name="radioPodepreniNahore" value="vetknuti" checked class="odsazeni0">
+                <label class="odsazeni1">Vetnutí</label><br>
+                <input type="radio" id="podporaNahore_volnyKonec" name="radioPodepreniNahore" value="volnyKonec" class="odsazeni0">
+                <label class="odsazeni1">Volný konec</label><br>
+
+                <!-- PODPORA DOLE -->
+                <p>Podpora dole</p>
+                <input type="radio" id="podporaDole_vetknuti" name="radioPodepreniDole" value="vetknuti" class="odsazeni0">
+                <label class="odsazeni1">Vetnutí</label><br>
+                <input type="radio" id="podporaDole_volnyKonec" name="radioPodepreniDole" value="volnyKonec" checked class="odsazeni0">
+                <label class="odsazeni1">Volný konec</label><br>
+
+            </div>
+
+            <div class="frame">
+            
+                <h3>Typ materiálu</h3>
+
+                <form id="typMaterialuForm">
+
+                    <!-- KOMPOZIT -->
+                    <label class="odsazeni1">Modul pružnosti</label>
+                    <input type="text" name="modulPruznosti" id="modulPruznosti" class="odsazeni3"><br><br>
+                    <input type="checkbox" name="checkTypMaterialu" id="kompozit" class="odsazeni0">
+                    <label class="odsazeni1">Kompozitní materiál</label><br><br>
+
+                    <!-- ŽELEZOBETON -->
+                    <div id="inputKompozit">
+                        <input type="checkbox" name="checkTypMaterialu" id="zelezobeton" class="odsazeni0">
+                        <label class="odsazeni1">Železobeton</label><br><br>
+
+                        <!-- MNOŽSTVÍ VÝZTUŽE -->
+                        <label class="odsazeni15">Počet prutů</label>
+                        <input type="text" name="checkTypMaterialu" id="pocetPrutu" class="odsazeni18">
+                        <label class="odsazeni3">Průměr výztuže</label>
+                        <input type="text" name="checkTypMaterialu" id="prumer"><br><br>
+                        
+                        <!-- OCELOBETON -->
+                        <input type="checkbox" name="checkTypMaterialu" id="ocelobeton" class="odsazeni0">
+                        <label class="odsazeni1">Ocelobeton</label><br><br>
+
+                        <input type="checkbox" name="checkTypMaterialu" id="vyplnenaTrubka" class="odsazeni1">
+                        <label class="odsazeni15">Vyplněná trubka</label><br>
+                        <input type="checkbox" name="checkTypMaterialu" id="zabetonovanyValcovanyProfil" class="odsazeni1">
+                        <label class="odsazeni15">Zabetonovaný válcovaný profil</label><br>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <div class="frame">
+            
+                <!-- TVAR PRŮŽŘEZU -->
+                <h3>Tvar průřezu</h3>
+
+                <form id="tvarPrurezuForm">
+
+                    <!-- ROZMĚRY ČTVERCOVÉHO PRŮŘEZU -->
+                    <input type="radio" name="radioPTvarPrurezu" id="prurezCtverec" checked class="odsazeni0">
+                    <label class="odsazeni1">Čtverec</label><br>
+                    
+                    <div id="inputCtverec">
+                        <label class="odsazeni15" id="a1cLabel">Strana a</label>
+                        <input class="odsazeni18" type="text" id="a1c">
+                        <label class="odsazeni3" id="a2cLabel">Strana a2</label>
+                        <input type="text" id="a2c" class="odsazeni4"><br><br>
+                    </div>    
+                    <!-- ROZMĚRY OBDÉLNÍKOVÉHO PRŮŘEZU -->
+                    <input type="radio" name="radioPTvarPrurezu" id="prurezObdelnik" class="odsazeni0">
+                    <label class="odsazeni1">Obdélník</label><br>
+                    
+                    <div id="inputObdelnik">
+                        <label class="odsazeni15" id="a1oLabel">Strana a</label>
+                        <input class="odsazeni18" type="text" id="a1o">
+                        <label class="odsazeni3" id="a2oLabel">Strana a2</label>
+                        <input type="text" id="a2o" class="odsazeni4"><br><br>
+                        
+                        <label class="odsazeni15">Strana b</label>
+                        <input class="odsazeni18" type="text" id="bo">
+                        <label class="odsazeni3" id="b2oLabel">Strana b2</label>
+                        <input type="text" id="b2o" class="odsazeni4"><br><br>
+                    </div>
+                    
+                    <!-- ROZMĚRY KRUHOVÉHO PRŮŘEZU -->
+                    <input type="radio" name="radioPTvarPrurezu" id="prurezKruh" class="odsazeni0">
+                    <label class="odsazeni1">Kruh</label><br>
+
+                    <div id="inputKruh">
+                        <label class="odsazeni15" id="r1Label">Poloměr r</label>
+                        <input class="odsazeni18" type="text" id="r1">
+                        <label class="odsazeni3" id="r2Label">Poloměr r2</label>
+                        <input type="text" id="r2" class="odsazeni4"><br><br>
+                    </div>   
+
+                    <!-- ZADAT PRŮŘEZOVOU PLOCHU -->
+                    <input type="radio" name="radioPTvarPrurezu" id="prurezPlocha" class="odsazeni0">
+                    <label class="odsazeni1">Upravit průřezovou plochu</label><br>
+                    <div id="inputPlocha">
+                        <label class="odsazeni15" id="A1Label">Plocha A1</label>
+                        <input class="odsazeni18" type="text" id="A1">
+                        <label class="odsazeni3"id="A2Label">Plocha A2</label>
+                        <input type="text" id="A2" class="odsazeni4"><br><br>
+                    </div>   
+                </form>
+
+            </div>
+
+
+
+        </div>
+  
+    <div class="item3">
+
+        <!-- OBSAH TABULKY JE GENEROVAN JAVASCRIPTEM -->
+        <table>
+        </table>
+
+    </div>  
+    
+    <div class="item4">
+
+        <!-- zatim provizore je to tady  
+        <form action="/user_create" method="POST">
+            <input placeholder="First name" name="create_first_name"/>
+            <input placeholder="Last name" name="create_last_name"/>
+            <button>Submit</button>
+        </form>
+    --> 
+
+    <form id="form" action="/vytvorJSONData" method="POST">
+       
+    </form>
+
+    <!--
+        <div class="obsahItem4">
+
+            <label id="meritkoLabel">Měřítko</label>
+            <input class="meritkoNaDelku" type="text" id="meritko"><br><br>
+            <label id="meritkoKonstrukceLabel">Kontrukce:</label>
+            <input class="meritkoKce" type="text" id="meritkoKonstrukce">
+            <label class="meritkoLabel" id="meritkoKonstrukceLabel">N:</label>
+            <input class="meritko" type="text" id="meritkoN">
+            <label class="meritkoLabel" id="meritkoKonstrukceLabel">u:</label>
+            <input class="meritko" type="text" id="meritkoU">
+            <label class="meritkoLabel" id="meritkoKonstrukceLabel">Eps:</label>
+            <input class="meritko" type="text" id="meritkoEps">
+            <label class="meritkoLabel" id="meritkoKonstrukceLabel">Sigma:</label>
+            <input class="meritko" type="text" id="meritkoSigma">
+
+        </div>    
+        
+        
+        <canvas id="myCanvas" width="700" height="700" style="border:1px solid white;" >
+            Your browser does not support the HTML5 canvas tag.</canvas>
+    -->    
+
+    </div> 
+    
+</div>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+
+
+.grid-container {
+    display: grid;
+    background-color: #2196F3;
+  }
+  
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .item1 {
+    grid-area: 2 / 1 / 1 / 4;
+    height:80px;
+  }
+    
+
+.item2 {
+    margin:0px;
+    padding:0px;
+    height:75vh;
+    width:33vw;
+
+    overflow-x: scroll; 
+    overflow-y: scroll; 
+}
+
+.item3 {  
+    margin:0px;
+    padding:0px;
+    height:75vh;
+    width:33vw;
+
+    overflow-x: scroll; 
+    overflow-y: scroll; 
+}   
+
+.item4 { 
+    margin:0px;
+    padding:0px;
+    height:75vh;
+    width:33vw;
+
+    overflow-x: scroll; 
+    overflow-y: scroll; 
+}
+
+div:not(.parent){
+    margin:10px;
+    margin-left:0px;
+    background-color: rgb(204, 255, 255);
+}
+
+
+button {
+    float:left;
+    font-size: 16px;
+    display: block;
+    left:10px;
+    margin-left:10px;
+    width:140px;
+}
+
+#spoctiTabulkuButt {
+  width:180px;
+}
+
+#spoctiVysledkyButt {
+  width:120px;
+}
+
+
+.frameButt1 {
+  float:left;
+  border: 1px solid black;
+  width:460px;
+  height:70px;
+}
+
+.frameButt2 {
+  float:left;
+  border: 1px solid black;
+  width:330px;
+  height:70px;
+}
+
+.frameButt3 {
+  float:left;
+  border: 1px solid black;
+  width:230px;
+  height:70px;
+}
+
+
+.obsahItem4{
+  width:730px;
+}
+

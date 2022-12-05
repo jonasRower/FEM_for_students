@@ -1,0 +1,56 @@
+body {
+    line-height: 15px; /* 4px +12px + 4px */
+    margin:5px
+}
+
+.frame {
+    padding: 10px;
+    border: 1px solid grey;
+}
+
+.odsazeni0 {
+    position: absolute;
+    left:20px;
+}
+
+.odsazeni1 {
+    position: absolute;
+    left:50px;
+}
+
+.odsazeni15 {
+    position: absolute;
+    left:80px;
+}
+
+#pocetPrutu {
+    position: absolute;
+    left:160px;
+    width:50px;
+}
+
+.odsazeni18 {
+    position: absolute;
+    left:160px;
+    width:50px;
+}
+
+.odsazeni2 {
+    position: absolute;
+    left:200px;
+}
+
+.odsazeni3 {
+    position: absolute;
+    left:250px;
+}
+
+.odsazeni4 {
+    position: absolute;
+    left:360px;
+    width:50px;
+}
+
+br {
+    font: 5px;
+}
